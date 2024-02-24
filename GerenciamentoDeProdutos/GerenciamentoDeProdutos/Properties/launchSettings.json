@@ -12,17 +12,17 @@
     "GerenciamentoDeProdutos": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7205;http://localhost:5145",
+      "launchBrowser": false,
+      "launchUrl": "produtos",
+      "applicationUrl": "http://localhost:5145",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchBrowser": false,
+      "launchUrl": "produtos",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
