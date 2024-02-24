@@ -4,7 +4,7 @@ namespace GerenciamentoDeProdutos.Models
 {
     public class Produto
     {
-        public int Id;
+        public int Id { get; set; }
         [Required(ErrorMessage ="Informe o nome do produto")]
         public string Nome { get; set; }
 
