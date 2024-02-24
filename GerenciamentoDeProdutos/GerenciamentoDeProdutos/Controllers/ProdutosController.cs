@@ -17,7 +17,7 @@ namespace GerenciamentoDeProdutos.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Produto> ListarProdutos()
+        public IEnumerable<Produto> Get()
         {
             var produtos = _context.Produtos.ToList();
 
@@ -25,16 +25,16 @@ namespace GerenciamentoDeProdutos.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Produto>> CadastrarProtudo(Produto produto)
+        public async Task<ActionResult<Produto>> Create(Produto produto)
         {
             var produtoCadastrado = await _context.Produtos.AddAsync(produto);
             await _context.SaveChangesAsync();
 
-            return Created(nameof(ListarProdutos), new { id = produtoCadastrado.Entity.Id });
+            return Created(nameof(Create), new { id = produtoCadastrado.Entity.Id });
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<Produto>> AtualizarProduto(int id, [FromBody]  Produto produto)
+        public async Task<ActionResult<Produto>> Update(int id, [FromBody]  Produto produto)
         {
             var produtoExistente = await _context.Produtos.FindAsync(id);
 
@@ -52,7 +52,7 @@ namespace GerenciamentoDeProdutos.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Produto>> Excluir(int id)
+        public async Task<ActionResult<Produto>> Delete(int id)
         {
             var produto = await _context.Produtos.FindAsync(id);
 
@@ -66,6 +66,8 @@ namespace GerenciamentoDeProdutos.Controllers
 
             return NoContent();
         }
+
+
 
     }
 }
